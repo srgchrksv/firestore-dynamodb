@@ -1,9 +1,12 @@
 ## Firestore-DynamoDB
 
-![migration.jpeg](migration.jpeg)
+### Migrate your Firestore to DynamoDB or DynamoDB to firestore
+![migration diagram made with lucid.app](migration.jpeg)
+
+*migration diagram made with lucid.app*
 
 
-To run migration create .env file with AWS and GCP credentials:
+### To run migration create .env file with AWS and GCP credentials:
 ```bash
 # acces keys
 AWS_ACCESS_KEY_ID=
@@ -23,7 +26,7 @@ FIRESTORE_COLLECTION=
 DYNAMODB_TABLE=
 ```
 
-finally set bath size in .env for ingestion and loading
+finally set batch size in .env for ingestion and loading
 ```bash
 BATCH_SIZE=
 ```
@@ -37,9 +40,11 @@ pip install -r requirements.txt
 And to migrate firestore -> dynamoDB run:
 
 ```bash
-python main.py
+python firestore_dynamodb.py
 ```
 
-*Firestore and DynamoDB got to have _id field for this migration to run successfully*
+And to migrate dynamoDB -> firestore run:
 
-*Maybe later on I'll add DynamoDB -> Firestore migration feature*
+```bash
+python dynamodb_firestore.py
+```

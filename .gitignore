@@ -1,1 +1,5 @@
 .env
+.venv
+*.json
+__pycache__
+*.log
