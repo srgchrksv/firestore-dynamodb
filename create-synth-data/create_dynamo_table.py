@@ -20,7 +20,7 @@ session = boto3.Session(
 dynamodb = session.resource('dynamodb')
 
 # Define the table schema
-table_name = 'Products'
+table_name = os.environ.get('DYNAMODB_TABLE')
 attribute_definitions = [
     {'AttributeName': '_id', 'AttributeType': 'S'},  # Partition key
     {'AttributeName': 'category', 'AttributeType': 'S'}  # Sort key (optional)

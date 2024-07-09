@@ -5,7 +5,7 @@ import random
 import os 
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv('../.env')
 # get database name
 FIRESTORE_DATABASE = os.environ.get('FIRESTORE_DATABASE')
 
@@ -49,7 +49,7 @@ def populate_firestore(rows):
     for _ in range(rows):
         product = generate_random_product()
         collection_ref.document(product["_id"]).set(product)
-    print("Inserted {rows} random products into Firestore.")
+    print(f"Inserted {rows} random products into Firestore.")
 
 
 populate_firestore(100)
